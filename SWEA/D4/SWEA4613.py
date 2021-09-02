@@ -14,24 +14,23 @@ for tc in range(1, T+1):
                 color[i][2] += 1
     
     for i in range(0, N-2):
-        for j in range(N-2-i, 0, -1):
+        for j in range(i+1, N-1-i):
             k = N-2-(i+j)
             a, b = i, j
             cnt = 0
             cnt += color[0][1] + color[0][2]
             cnt += color[-1][0] + color[-1][1]
-            while a:
+            while a>0:
                 cnt += color[a][1]+color[a][2]
-                a -= 1
-                
-            while b:
+                a -= 1    
+            while b<:
                 cnt += color[b][0] + color[b][2]
                 b -= 1
-            while k:
+            while k>0:
                 cnt += color[k][0] + color[k][1]
                 k -= 1
             if cnt < min_cnt:
                 min_cnt = cnt
-            
+    print('#{} {}'.format(tc, min_cnt-1))
 
                 
