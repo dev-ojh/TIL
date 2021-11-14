@@ -8,7 +8,7 @@ for tc in range(1, T+1):
     k = 0
     i = 0
     while i < len(words):
-        if 90 >= ord(words[i]) >= 65:
+        if 90 >= ord(words[i]) >= 65 and (i==0 or ord(words[i-1]) == 32):
             j = 1
             while True:
                 if 97 <= ord(words[i+j]) <= 122:
